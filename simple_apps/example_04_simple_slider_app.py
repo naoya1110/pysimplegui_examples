@@ -10,7 +10,7 @@
 import PySimpleGUI as sg
 
 # ウィンドウのカラーテーマ設定
-sg.theme("default") 
+sg.theme("DefaultNoMoreNagging") 
 
 # 部品を作成
 ## CLOSEボタン

@@ -1,9 +1,10 @@
-# カウントアップするアプリ
+# スライダの値を表示するアプリ
 
 # 公式ドキュメント
 # https://www.pysimplegui.org/en/latest/readme%20Japanese/
 # https://www.pysimplegui.org/en/latest/
 # https://www.pysimplegui.org/en/latest/call%20reference/
+
 
 # パッケージのインポート
 import PySimpleGUI as sg
@@ -15,8 +16,15 @@ sg.theme("DefaultNoMoreNagging")
 ## CLOSEボタン
 close_button_element = sg.Button(button_text="CLOSE", size=(10,3), key="CLOSE")
 
-## PUSH MEボタン
-push_me_button_element = sg.Button(button_text="PUSH ME", size=(10,3), key="PUSH ME")
+## スライダ
+slider_element = sg.Slider(
+                        range=(0,200),
+                        default_value=0,
+                        orientation="h", # "h" or "v"
+                        size=(30,30),
+                        enable_events=True,
+                        disable_number_display=False,
+                        key="SLIDER")
 
 ## 値の表示
 number_display_element = sg.Text(
@@ -29,14 +37,14 @@ number_display_element = sg.Text(
 
 
 # アプリのレイアウトを設定，部品を2次元配列で配置
-layout = [[push_me_button_element, number_display_element],
+layout = [[number_display_element],
+          [slider_element],
           [close_button_element]]
 
-count = 0
 
 # ウィンドウを設定
 window = sg.Window(
-                    title="Simple Count Up App",  # ウィンドウのタイトル
+                    title="My App",  # ウィンドウのタイトル
                     layout=layout,  # レイアウト
                     size=(300, 300) # ウィンドウの大きさ
                     )
@@ -51,10 +59,10 @@ while True:
     if event == "CLOSE" or event == sg.WIN_CLOSED:
         break
     
-    # PUSH MEボタンが押されたらcountを+1してnumber_text_elementに表示する
-    if event == "PUSH ME":
-        count += 1
-        number_display_element.update(count)
+    # スライダが動かされたらスライダの値を取得してnumber_text_elementに表示する
+    if event == "SLIDER":
+        number = values["SLIDER"]   # スライダの値を取得
+        number_display_element.update(number)
         
 # アプリを終了
 window.close()

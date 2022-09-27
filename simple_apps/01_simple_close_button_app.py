@@ -25,7 +25,7 @@ layout = [[close_button_element]]
 
 # ウィンドウを設定
 window = sg.Window(
-                    title="Simple Button App",  # ウィンドウのタイトル
+                    title="My App",  # ウィンドウのタイトル
                     layout=layout,              # レイアウト
                     size=(300, 300)             # ウィンドウの大きさ
                     )

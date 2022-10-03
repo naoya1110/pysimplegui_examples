@@ -61,7 +61,7 @@ layout = [[img_element, slider_y_element],
 
 # ウィンドウを設定
 window = sg.Window(
-                    title="My App",     # ウィンドウのタイトル
+                    title="Task 02",     # ウィンドウのタイトル
                     layout=layout,      # レイアウト
                     size=(300, 400)     # ウィンドウの大きさ
                     )

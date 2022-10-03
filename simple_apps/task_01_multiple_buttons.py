@@ -39,7 +39,7 @@ count = 0
 
 # ウィンドウを設定
 window = sg.Window(
-                    title="Multiple Buttons",  # ウィンドウのタイトル
+                    title="Task 01",  # ウィンドウのタイトル
                     layout=layout,  # レイアウト
                     size=(400, 300) # ウィンドウの大きさ
                     )

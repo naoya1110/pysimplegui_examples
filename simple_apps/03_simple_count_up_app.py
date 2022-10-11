@@ -26,8 +26,6 @@ number_display_element = sg.Text(
                             key="NUMBER"
                             )
 
-
-
 # アプリのレイアウトを設定，部品を2次元配列で配置
 layout = [[push_me_button_element, number_display_element],
           [close_button_element]]

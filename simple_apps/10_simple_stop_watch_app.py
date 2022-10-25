@@ -54,16 +54,18 @@ while True:
     
     # START/STOPボタンが押されたら，is_startedに応じて時計をスタート／ストップする
     if event == "START_STOP":
+        # is_startedがFalseならt0を取得してis_startedをTrueに変える
         if is_started==False:
             t0 = time.time()
             is_started = True
             start_stop_button_element.update(text="STOP")
-            
+        
+        # is_startedがTrueならis_startedをFalseに変える
         elif is_started==True:
             is_started = False
             start_stop_button_element.update(text="START")
             
-    
+    # is_startedがTrueの間経過時間を計測して表示する
     elif is_started==True:
         dt = time.time() - t0
         number_display_element.update(dt)
